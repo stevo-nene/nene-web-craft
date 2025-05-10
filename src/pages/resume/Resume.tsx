@@ -5,13 +5,14 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Download, ExternalLink, File, FileText } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import nenedf from "@/data/files/Dev Nene.pdf"
 
 const Resume = () => {
   const [activeTab, setActiveTab] = useState("view");
-  
+  const [iframeError, setIframeError] = useState(false);
   return (
-    <Layout 
-      title="Resume | Steve Nene" 
+    <Layout
+      title="Resume | Steve Nene"
       description="Professional resume of Steve Nene, Full-Stack Developer and Cybersecurity Enthusiast"
     >
       <section className="pt-24 pb-16">
@@ -23,24 +24,24 @@ const Resume = () => {
                 My professional background and qualifications
               </p>
             </div>
-            
+
             <div className="flex space-x-4">
               <Button asChild>
-                <a href="/resume.pdf" download="Steve_Nene_Resume.pdf">
+                <a href={nenedf} download="Steve_Nene_Resume.pdf">
                   <Download className="mr-2 h-4 w-4" />
                   Download PDF
                 </a>
               </Button>
-              
+
               <Button variant="outline" asChild>
-                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                <a href={nenedf} target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="mr-2 h-4 w-4" />
                   Open PDF
                 </a>
               </Button>
             </div>
           </div>
-          
+
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
             <TabsList className="grid w-full grid-cols-2 mb-8">
               <TabsTrigger value="view">
@@ -52,34 +53,45 @@ const Resume = () => {
                 Plain Text
               </TabsTrigger>
             </TabsList>
-            
+
             <TabsContent value="view">
               <Card>
                 <CardContent className="p-6">
                   <div className="aspect-[8.5/11] w-full bg-card relative">
-                    <iframe
-                      src="/resume.pdf"
-                      className="absolute inset-0 w-full h-full"
-                      style={{ minHeight: '800px' }}
-                    ></iframe>
-                    
-                    {/* Fallback if iframe doesn't work */}
-                    <div className="absolute inset-0 w-full h-full flex flex-col items-center justify-center">
-                      <p className="text-muted-foreground mb-4">
-                        If the resume isn't loading, you can download it directly.
-                      </p>
-                      <Button asChild>
-                        <a href="/resume.pdf" download="Steve_Nene_Resume.pdf">
-                          <Download className="mr-2 h-4 w-4" />
-                          Download Resume
-                        </a>
-                      </Button>
-                    </div>
+                    {!iframeError && (
+                      <iframe
+                        src={nenedf}
+                        className="absolute inset-0 w-full h-full"
+                        style={{ minHeight: '800px' }}
+                        onError={() => setIframeError(true)}
+                        title="Resume"
+                      ></iframe>
+                    )}
+
+                    {iframeError && (
+                      <div className="absolute inset-0 w-full h-full flex flex-col items-center justify-center">
+                        <p className="text-muted-foreground mb-4">
+                          If the resume isn't loading, you can download it directly.
+                        </p>
+                        <Button asChild>
+                          <a
+
+                            href={nenedf}
+                            // href="https://www.canva.com/design/DAGH5pkyxw8/Q7AjesuLkQMe3k2D1jdDaw/view?utm_content=DAGH5pkyxw8&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6f23046e7a"
+                            download="Steve_Nene_Resume.pdf"
+                          >
+                            <Download className="mr-2 h-4 w-4" />
+                            Download Resume
+                          </a>
+                        </Button>
+                      </div>
+                    )}
                   </div>
                 </CardContent>
+
               </Card>
             </TabsContent>
-            
+
             <TabsContent value="raw">
               <Card>
                 <CardContent className="p-6">
@@ -94,7 +106,7 @@ const Resume = () => {
                         <span>📍 San Francisco, CA</span>
                       </div>
                     </div>
-                    
+
                     <div>
                       <h3 className="text-xl font-semibold mb-2">Professional Summary</h3>
                       <p>
@@ -104,10 +116,10 @@ const Resume = () => {
                         security best practices.
                       </p>
                     </div>
-                    
+
                     <div>
                       <h3 className="text-xl font-semibold mb-2">Experience</h3>
-                      
+
                       <div className="space-y-4">
                         <div>
                           <div className="flex justify-between mb-1">
@@ -122,7 +134,7 @@ const Resume = () => {
                             <li>Implemented CI/CD pipeline reducing deployment time by 40%</li>
                           </ul>
                         </div>
-                        
+
                         <div>
                           <div className="flex justify-between mb-1">
                             <h4 className="font-semibold">Cybersecurity Engineer</h4>
@@ -136,7 +148,7 @@ const Resume = () => {
                             <li>Collaborated with dev teams to integrate security protocols into SDLC</li>
                           </ul>
                         </div>
-                        
+
                         <div>
                           <div className="flex justify-between mb-1">
                             <h4 className="font-semibold">Full Stack Developer</h4>
@@ -152,10 +164,10 @@ const Resume = () => {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div>
                       <h3 className="text-xl font-semibold mb-2">Education</h3>
-                      
+
                       <div className="space-y-4">
                         <div>
                           <div className="flex justify-between mb-1">
@@ -166,7 +178,7 @@ const Resume = () => {
                           <p>Focus: Cybersecurity</p>
                           <p>Thesis: "Advanced Intrusion Detection Systems Using Machine Learning"</p>
                         </div>
-                        
+
                         <div>
                           <div className="flex justify-between mb-1">
                             <h4 className="font-semibold">Bachelor of Science, Computer Science</h4>
@@ -177,43 +189,43 @@ const Resume = () => {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div>
                       <h3 className="text-xl font-semibold mb-2">Skills</h3>
-                      
+
                       <div className="grid grid-cols-2 gap-x-8 gap-y-4">
                         <div>
                           <h4 className="font-medium">Frontend</h4>
                           <p>JavaScript, TypeScript, React, Next.js, HTML/CSS, Tailwind CSS</p>
                         </div>
-                        
+
                         <div>
                           <h4 className="font-medium">Backend</h4>
                           <p>Node.js, Express, Python, Django, GraphQL</p>
                         </div>
-                        
+
                         <div>
                           <h4 className="font-medium">Database</h4>
                           <p>MongoDB, PostgreSQL, MySQL, Redis</p>
                         </div>
-                        
+
                         <div>
                           <h4 className="font-medium">DevOps</h4>
                           <p>Docker, AWS, CI/CD, Git, GitHub Actions</p>
                         </div>
-                        
+
                         <div>
                           <h4 className="font-medium">Security</h4>
                           <p>Penetration Testing, Network Security, OWASP, Encryption</p>
                         </div>
-                        
+
                         <div>
                           <h4 className="font-medium">Other</h4>
                           <p>Agile/Scrum, Technical Writing, Team Leadership</p>
                         </div>
                       </div>
                     </div>
-                    
+
                     <div>
                       <h3 className="text-xl font-semibold mb-2">Certifications</h3>
                       <ul className="list-disc pl-5">

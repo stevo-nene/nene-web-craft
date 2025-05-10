@@ -1,6 +1,11 @@
-
-import { Card, CardContent } from "@/components/ui/card";
-import { Code, Database, Server, Globe, Shield, Layers } from "lucide-react";
+import { Card,CardHeader,CardContent } from "@/components/ui/card";
+import { Code, Database, Server, Globe, Shield, Layers, ChevronDown } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 interface Skill {
   name: string;
@@ -69,35 +74,94 @@ const skillCategories: SkillCategory[] = [
   }
 ];
 
+const SkillsSection2 = () => {
+  return (
+    <section className="py-16 bg-background">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <h2 className="text-3xl font-bold text-center mb-12">Skills & Expertise</h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {skillCategories.map((category) => (
+            <Card key={category.name} className="overflow-hidden border border-border bg-card">
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value={category.name} className="border-b-0">
+                  <AccordionTrigger className="px-6 py-4 hover:no-underline">
+                    <div className="flex items-center gap-3">
+                      <div className="bg-primary/10 p-2 rounded-lg">
+                        {category.icon}
+                      </div>
+                      <h3 className="text-xl font-semibold">{category.name}</h3>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-6">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-2">
+                      {category.skills.map((skill) => (
+                        <div 
+                          key={skill.name} 
+                          className="flex flex-col items-center text-center bg-secondary/20 p-4 rounded-lg transition-all hover:bg-secondary/30"
+                        >
+                          <div className="bg-background rounded-lg p-2 mb-2 h-16 w-16 flex items-center justify-center">
+                            {skill.icon}
+                          </div>
+                          <span className="text-sm font-medium">{skill.name}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const SkillsSection = () => {
   return (
     <section className="section">
       <div className="container-custom">
         <h2 className="section-heading">Skills</h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <Accordion type="multiple" className="space-y-4">
           {skillCategories.map((category) => (
-            <Card key={category.name} className="bg-card border border-border rounded-lg p-6 card-hover">
-              <div className="flex items-center gap-3 mb-4">
-                {category.icon}
-                <h3 className="text-xl font-semibold">{category.name}</h3>
-              </div>
-              
-              <CardContent className="p-0">
-                <div className="grid grid-cols-3 gap-4">
-                  {category.skills.map((skill) => (
-                    <div key={skill.name} className="flex flex-col items-center text-center">
-                      <div className="bg-secondary/50 p-3 rounded-lg mb-2 h-16 w-16 flex items-center justify-center">
-                        {skill.icon}
+            <AccordionItem key={category.name} value={category.name}>
+              <Card className="bg-card border border-border rounded-lg p-4 card-hover">
+                  <CardHeader  className="dark:bg-gray-950 w-full">
+                <AccordionTrigger className="bg- gray-300 w-full">
+
+                  <div className="flex items-center gap-3">
+                      <div className="bg-primary/10 p-2 rounded-lg">
+                        {category.icon}
                       </div>
-                      <span className="text-sm font-medium">{skill.name}</span>
+                      <h3 className="text-xl font-semibold">{category.name}</h3>
                     </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+        
+                </AccordionTrigger>
+                  </CardHeader>
+
+                <AccordionContent>
+                  <CardContent className="p-0 pt-4">
+                    <div className="grid grid-cols-3 gap-4">
+                      {category.skills.map((skill) => (
+                        <div
+                          key={skill.name}
+                          className="flex flex-col items-center text-center"
+                        >
+                          <div className="bg-secondary/50 p-3 rounded-lg mb-2 h-16 w-16 flex items-center justify-center">
+                            {skill.icon}
+                          </div>
+                          <span className="text-sm font-medium">{skill.name}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </AccordionContent>
+              </Card>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
       </div>
     </section>
   );

@@ -25,6 +25,7 @@ const AllProjects = () => {
     
     return matchesSearch && matchesTag;
   });
+  // console.log(selectedTag)
 
   return (
     <Layout title="Projects | Steve Nene" description="Browse my latest software development and cybersecurity projects">
@@ -36,7 +37,7 @@ const AllProjects = () => {
           </p>
           
           <div className="mb-8">
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row mb-4">
               <div className="flex-1">
                 <Input
                   placeholder="Search projects..."
@@ -46,18 +47,20 @@ const AllProjects = () => {
                 />
               </div>
               
+            </div>
               <div className="flex flex-wrap gap-2">
-                {selectedTag && (
+
+
                   <Badge 
-                    variant="secondary" 
+                    variant="lime" 
                     className="cursor-pointer"
                     onClick={() => setSelectedTag(null)}
                   >
-                    {selectedTag} ×
+                    All
                   </Badge>
-                )}
+
                 
-                {!selectedTag && allTags.map(tag => (
+                {allTags.map(tag => (
                   <Badge 
                     key={tag}
                     variant="outline"
@@ -65,10 +68,15 @@ const AllProjects = () => {
                     onClick={() => setSelectedTag(tag)}
                   >
                     {tag}
+                    
+                    {selectedTag===tag && <p onClick={(e)=>{
+                      e.stopPropagation();
+
+                      setSelectedTag(null)
+                    }} className="ml-1.5 hover:text-red-500">×</p>}
                   </Badge>
                 ))}
               </div>
-            </div>
           </div>
           
           {filteredProjects.length === 0 ? (

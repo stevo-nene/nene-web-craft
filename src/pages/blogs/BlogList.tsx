@@ -9,18 +9,18 @@ import { Badge } from "@/components/ui/badge";
 const BlogList = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
-  
+
   // Get all unique tags
   const allTags = Array.from(new Set(blogPosts.flatMap(post => post.tags)));
-  
+
   // Filter posts based on search term and selected tag
   const filteredPosts = blogPosts.filter(post => {
-    const matchesSearch = 
-      post.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+    const matchesSearch =
+      post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
-    
+
     const matchesTag = selectedTag ? post.tags.includes(selectedTag) : true;
-    
+
     return matchesSearch && matchesTag;
   });
 
@@ -32,9 +32,9 @@ const BlogList = () => {
           <p className="text-lg text-muted-foreground mb-8">
             Thoughts and insights on web development, cybersecurity, and technology.
           </p>
-          
+
           <div className="mb-8">
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row p mb-4">
               <div className="flex-1">
                 <Input
                   placeholder="Search articles..."
@@ -43,36 +43,48 @@ const BlogList = () => {
                   className="w-full"
                 />
               </div>
-              
+                          </div>
+
+
               <div className="flex flex-wrap gap-2">
-                {selectedTag && (
-                  <Badge 
-                    variant="secondary" 
-                    className="cursor-pointer"
-                    onClick={() => setSelectedTag(null)}
-                  >
-                    {selectedTag} ×
-                  </Badge>
-                )}
-                
-                {!selectedTag && allTags.map(tag => (
-                  <Badge 
+                <Badge
+                  variant="lime"
+                  className="cursor-pointer"
+                  onClick={() => setSelectedTag(null)}
+                >
+                  All
+                </Badge>
+
+
+
+
+
+                {allTags.map(tag => (
+                  <Badge
                     key={tag}
                     variant="outline"
-                    className="cursor-pointer hover:bg-secondary"
+                    className={`hover:bg-secondary ${selectedTag === tag && "bg-r ed-100 hover:bg-r ed-200"} cursor-pointer `}
                     onClick={() => setSelectedTag(tag)}
                   >
                     {tag}
+
+                    {selectedTag === tag && <p onClick={(e) => {
+                      e.stopPropagation();
+
+                      setSelectedTag(null)
+                    }} className="ml-1.5 hover:text-red-500">×</p>}
                   </Badge>
                 ))}
               </div>
-            </div>
           </div>
-          
+
+
+
+
           {filteredPosts.length === 0 ? (
             <div className="text-center py-12">
               <p className="text-lg">No articles found matching your criteria.</p>
-              <button 
+              <button
                 onClick={() => {
                   setSearchTerm("");
                   setSelectedTag(null);

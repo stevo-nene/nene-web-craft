@@ -9,15 +9,34 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        // default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        // destructive:
+        //   "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        // outline:
+        //   "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+        // secondary:
+        //   "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        // ghost: "hover:bg-accent hover:text-accent-foreground",
+        // link: "text-primary underline-offset-4 hover:underline",
+      // },
+              default:
+          "bg-primary text-white shadow-xs hover:bg-blue-600/90 focus:ring-2 focus:ring-blue-300",
         destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+          "bg-rose-500 text-white shadow-xs hover:bg-rose-700/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-red-500/40 dark:bg-rose-800",
+        warning:
+          "bg-yellow-500 text-black shadow-xs hover:bg-yellow-600 focus:ring-2 focus:ring-yellow-300 dark:bg-yellow-700",
+        info: "bg-sky-500 text-white shadow-xs hover:bg-sky-600 focus:ring-2 focus:ring-sky-300 dark:bg-sky-800",
+        success:
+          "bg-emerald-500 text-white shadow-xs hover:bg-emerald-600 focus:ring-2 focus:ring-emerald-300 dark:bg-emerald-800",
         outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+          "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
+          "bg-lime-500 text-black shadow-xs hover:bg-lime-600/80 focus:ring-2 focus:ring-lime-300",
+        ghost:
+          "hover:bg-gray-200 bg-gray-300 dark:bg-gray-200/40 dark:hover:bg-gray-400/50 text-black hover:bg-gray-500",
+        link: "text-blue-500 underline-offset-4 hover:underline",
+        devMode:
+          "bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white shadow-md hover:shadow-lg hover:brightness-110 transition-all duration-200 ease-in-out focus:ring-4 focus:ring-purple-300 dark:focus:ring-purple-700",
       },
       size: {
         default: "h-10 px-4 py-2",

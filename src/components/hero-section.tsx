@@ -1,7 +1,9 @@
 
-import { ArrowDown, ChevronDown, Download } from "lucide-react";
+import { ArrowDown, ChevronDown, Download,ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link as ScrollLink } from "react-scroll";
+import nenedf from "@/data/files/Dev Nene.pdf"
+
 
 const HeroSection = () => {
   return (
@@ -28,12 +30,19 @@ const HeroSection = () => {
               </ScrollLink>
             </Button>
             
-            <Button variant="outline" asChild>
-              <a href="/resume.pdf" download="Steve_Nene_Resume.pdf">
-                Download Resume
-                <Download className="ml-2 h-4 w-4" />
+            <Button className="group" variant="warning" asChild>
+              <a href={nenedf} target="_blank" rel="noopener noreferrer">
+                View Resume
+                <ExternalLink className="ml-2 h-4 w-4 group-hover:animate-bounce " />
               </a>
             </Button>
+            <Button className="group" variant="outline" asChild>
+              <a href={nenedf} download="Steve_Nene_Resume.pdf">
+                Download Resume
+                <Download className="ml-2 h-4 w-4 group-hover:animate-bounce" />
+              </a>
+            </Button>
+            {/* View Resume button on new tab */}
           </div>
         </div>
       </div>
