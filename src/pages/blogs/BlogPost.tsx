@@ -5,7 +5,7 @@ import { getPost, getPostContent } from "@/data/blog-posts";
 import { ChevronLeft, CalendarIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import BlogCard, { BlogPost } from "@/components/blog-card";
+import BlogCard, { BlogPost as BlogPostType } from "@/components/blog-card";
 import { blogPosts } from "@/data/blog-posts";
 import { Button } from "@/components/ui/button";
 
@@ -15,7 +15,7 @@ const BlogPost = () => {
   const { content } = post ? getPostContent(post.slug) : { content: "" };
   
   // Get related posts (posts with similar tags, excluding current one)
-  const getRelatedPosts = (): BlogPost[] => {
+  const getRelatedPosts = (): BlogPostType[] => {
     if (!post) return [];
     
     const relatedPosts = blogPosts
