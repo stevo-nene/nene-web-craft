@@ -1,8 +1,14 @@
 
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowRight, ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 interface Project {
   id: string;
@@ -40,58 +46,49 @@ const projects: Project[] = [
     tags: ["React Native", "Node.js", "MQTT", "Firebase"],
     images: ["https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-4.0.3"],
     github: "https://github.com",
+  },
+  {
+    id: "project-4",
+    title: "Blockchain Trading Platform",
+    description: "Secure cryptocurrency exchange platform with real-time market data and wallet integration",
+    tags: ["React", "Solidity", "Web3.js", "Node.js", "PostgreSQL"],
+    images: ["https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3"],
+    github: "https://github.com",
+    demo: "https://demo.com"
+  },
+  {
+    id: "project-5",
+    title: "AI Content Generator",
+    description: "Machine learning powered tool that creates custom marketing content based on user prompts",
+    tags: ["Python", "TensorFlow", "Flask", "React", "MongoDB"],
+    images: ["https://images.unsplash.com/photo-1677442135136-760c813a02e8?ixlib=rb-4.0.3"],
+    github: "https://github.com",
+    demo: "https://demo.com"
+  },
+  {
+    id: "project-6",
+    title: "Virtual Reality Training",
+    description: "Immersive VR training modules for industrial safety procedures and equipment operation",
+    tags: ["Unity3D", "C#", "WebXR", "Firebase", "Three.js"],
+    images: ["https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?ixlib=rb-4.0.3"],
+    github: "https://github.com",
   }
 ];
 
 const ProjectCard = ({ project }: { project: Project }) => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => 
-      prev === project.images.length - 1 ? 0 : prev + 1
-    );
-  };
-  
-  const prevImage = () => {
-    setCurrentImageIndex((prev) => 
-      prev === 0 ? project.images.length - 1 : prev - 1
-    );
-  };
-
   return (
-    <div className="card-project card-hover">
+    <div className="card-project card-hover h-full">
       <div className="relative overflow-hidden">
         <img
-          src={project.images[currentImageIndex]}
+          src={project.images[0]}
           alt={project.title}
           className="w-full h-56 object-cover"
         />
-        
-        {project.images.length > 1 && (
-          <div className="absolute inset-0 flex items-center justify-between p-2">
-            <Button 
-              size="icon" 
-              variant="secondary" 
-              className="h-8 w-8 rounded-full opacity-70 hover:opacity-100"
-              onClick={prevImage}
-            >
-              <ArrowLeft className="h-4 w-4" />
-            </Button>
-            <Button 
-              size="icon" 
-              variant="secondary" 
-              className="h-8 w-8 rounded-full opacity-70 hover:opacity-100"
-              onClick={nextImage}
-            >
-              <ArrowRight className="h-4 w-4" />
-            </Button>
-          </div>
-        )}
       </div>
       
-      <div className="p-5">
+      <div className="p-5 flex flex-col h-[calc(100%-14rem)]">
         <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-        <p className="text-muted-foreground mb-4">{project.description}</p>
+        <p className="text-muted-foreground mb-4 flex-grow">{project.description}</p>
         
         <div className="flex flex-wrap mb-4">
           {project.tags.map(tag => (
@@ -99,7 +96,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
           ))}
         </div>
         
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center mt-auto">
           <Link to={`/projects/${project.id}`} className="text-primary font-medium hover:underline">
             View Details
           </Link>
@@ -141,11 +138,25 @@ const ProjectsSection = () => {
       <div className="container-custom">
         <h2 className="section-heading">Featured Projects</h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map(project => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </div>
+        <Carousel
+          className="w-full max-w-screen-xl mx-auto"
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+        >
+          <CarouselContent className="-ml-2 md:-ml-4">
+            {projects.map(project => (
+              <CarouselItem key={project.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                <ProjectCard project={project} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="flex justify-end gap-2 mt-4">
+            <CarouselPrevious className="relative static left-auto right-auto translate-y-0" />
+            <CarouselNext className="relative static left-auto right-auto translate-y-0" />
+          </div>
+        </Carousel>
         
         <div className="mt-12 text-center">
           <Button asChild>
