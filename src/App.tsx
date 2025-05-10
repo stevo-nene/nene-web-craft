@@ -1,22 +1,39 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
+import { Helmet } from "react-helmet";
+import Index from "@/pages/Index";
+import AllProjects from "@/pages/projects/AllProjects";
+import ProjectDetail from "@/pages/projects/ProjectDetail";
+import BlogList from "@/pages/blogs/BlogList";
+import BlogPost from "@/pages/blogs/BlogPost";
+import Contact from "@/pages/contact/Contact";
+import Resume from "@/pages/resume/Resume";
+import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
+    <Helmet>
+      <title>Steve Nene | Full-Stack Developer</title>
+      <meta name="description" content="Portfolio of Steve Nene, Full-Stack Software Developer & Cybersecurity Enthusiast" />
+    </Helmet>
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/projects" element={<AllProjects />} />
+          <Route path="/projects/:id" element={<ProjectDetail />} />
+          <Route path="/blogs" element={<BlogList />} />
+          <Route path="/blogs/:slug" element={<BlogPost />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/resume" element={<Resume />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
