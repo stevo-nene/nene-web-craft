@@ -8,6 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Badge } from "@/components/ui/badge";
 
 interface Certification {
   name: string;
@@ -129,17 +130,35 @@ const CertificationCard = ({ certification }: { certification: Certification }) 
           <Award className="h-5 w-5 text-white" />
         </div>
       </div>
-      
+
       <CardHeader>
         <CardTitle>{certification.name}</CardTitle>
+        {/* <div className="flex items-center justify-between">
+                      <span className="text-sm text-muted-foreground font-medium">{certification.date}</span>
+                    </div> */}
+
         <CardDescription>
+          {/* <Badge rounded="full" variant="default" className="bg-indigo-300/20 hover:bg-primary/30">
+                        {certification.issuer}
+                      </Badge> */}
           {certification.issuer} • {certification.date}
         </CardDescription>
+
       </CardHeader>
-      
+
       <CardContent>
         <p className="text-muted-foreground">{certification.description}</p>
       </CardContent>
+      <CardContent>
+        <a
+          href={certification.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:underline text-sm mt-2 block"
+        >
+          View Certification
+        </a>      </CardContent>
+
     </Card>
   );
 };
@@ -149,7 +168,7 @@ const CertificationsSection = () => {
     <section className="section bg-secondary/30">
       <div className="container-custom">
         <h2 className="section-heading">Certifications</h2>
-        
+
         <Carousel
           className="w-full max-w-screen-xl mx-auto"
           opts={{

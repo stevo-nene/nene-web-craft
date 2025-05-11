@@ -40,6 +40,7 @@ const badgeVariants = cva(
         destructive:
           "bg-red-100 text-red-800 border-red-200 dark:bg-red-900 dark:text-red-100 dark:border-red-800",
         info: "bg-cyan-100 text-cyan-800 border-cyan-200 dark:bg-cyan-900 dark:text-cyan-100 dark:border-cyan-800",
+        
         outline:
           "bg-transparent border-gray-300 text-gray-900 dark:border-gray-600 dark:text-gray-100",
         muted:
