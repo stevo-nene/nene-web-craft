@@ -15,9 +15,63 @@ interface Certification {
   date: string;
   images: string[];
   description: string;
+  link: string
 }
 
+
 const certifications: Certification[] = [
+  {
+    name: "Quantum Computing Fundamentals",
+    issuer: "IBM",
+    date: "2023",
+    description: "An introduction to the principles of quantum computing and its applications.",
+    images: ["https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&q=80&w=300"],
+    link: "https://www.ibm.com/training/quantum-computing"
+  },
+  {
+    name: "Google IT Support Professional",
+    issuer: "Google",
+    date: "2022",
+    description: "Comprehensive training in IT support, including troubleshooting and customer service.",
+    images: ["https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=300"],
+    link: "https://grow.google/certificates/it-support/"
+  },
+  {
+    name: "Azure AI Services Certification",
+    issuer: "Microsoft",
+    date: "2023",
+    description: "Certification in leveraging Azure's AI services for building intelligent solutions.",
+    images: ["https://images.unsplash.com/photo-1590608897129-79da63f5d3d8?auto=format&fit=crop&q=80&w=300"],
+    link: "https://learn.microsoft.com/en-us/certifications/azure-ai-engineer/"
+  },
+  {
+    name: "Certified Ethical Hacker",
+    issuer: "EC-Council",
+    date: "2022",
+    description: "Training in ethical hacking techniques to identify and mitigate security vulnerabilities.",
+    images: ["https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&q=80&w=300"],
+    link: "https://www.eccouncil.org/programs/certified-ethical-hacker-ceh/"
+  },
+  {
+    name: "CompTIA Security+",
+    issuer: "CompTIA",
+    date: "2023",
+    description: "A global certification focusing on core cybersecurity skills and best practices.",
+    images: ["https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=300"],
+    link: "https://www.comptia.org/certifications/security"
+  },
+  {
+    name: "AWS Cloud Practitioner",
+    issuer: "Amazon Web Services",
+    date: "2022",
+    description: "Foundational certification in AWS cloud concepts, services, and security.",
+    images: ["https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&q=80&w=300"],
+    link: "https://aws.amazon.com/certification/certified-cloud-practitioner/"
+  }
+];
+
+
+const certifications2 = [
   {
     name: "Certified Ethical Hacker (CEH)",
     issuer: "EC-Council",

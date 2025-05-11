@@ -120,7 +120,7 @@ const SkillsSection2 = () => {
 
 const SkillsSection = () => {
   return (
-    <section className="section">
+    <section id="skills" className="section">
       <div className="container-custom">
         <h2 className="section-heading">Skills</h2>
 

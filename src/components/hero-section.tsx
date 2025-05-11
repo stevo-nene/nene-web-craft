@@ -21,7 +21,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="h-screen flex flex-col justify-center bg-gradient-to-b from-background to-secondary/30 relative overflow-hidden">
+    <section className="min-h-screen flex flex-col justify-center bg-gradient-to-b from-background to-secondary/30 relative overflow-hidden">
       {/* 3D floating geometric shapes */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Large circle */}
@@ -85,13 +85,24 @@ const HeroSection = () => {
             Steve Nene
             <span className="absolute -inset-1 bg-primary/5 -z-10 blur-md rounded-lg"></span>
           </h1>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground/70">
+      
+
+          {/* <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground/70">
             I build things for the web & secure digital systems.
+          </h2> */}
+            <h2 className="text-xl md:text-2xl font-medium text-muted-foreground">
+            Software Developer | AI Enthusiast | Cybersecurity Specialist
           </h2>
+
           <p className="text-lg text-muted-foreground max-w-xl backdrop-blur-sm bg-background/30 p-3 rounded-lg">
-            I'm a full-stack developer specializing in building and securing exceptional digital experiences. 
+           Welcome to my digital playground. I'm a full-stack developer specializing in building and securing exceptional digital experiences. 
             Currently, I'm focused on building accessible, human-centered products.
           </p>
+                 {/* <p className="max-w-xl text-lg animate-fade-in" style={{animationDelay: "0.4s"}}>
+          Welcome to my digital playground. I build solutions that solve real problems, 
+          by turning complex ideas into elegant, functional applications.
+        </p> */}
+
           
           <div className="pt-4 flex flex-wrap gap-4">
             <Button asChild className="group backdrop-blur-sm">

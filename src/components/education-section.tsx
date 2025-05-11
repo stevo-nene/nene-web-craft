@@ -14,27 +14,54 @@ interface Education {
 
 const educations: Education[] = [
   {
-    institution: "Massachusetts Institute of Technology",
-    degree: "Master of Science",
-    field: "Computer Science with Cybersecurity Focus",
-    period: "2015 - 2017",
+    institution: "St Joseph\'s HighSchool",
+    degree:"High School Degree",
+       field: "Kenya Certificate Secondary Education",
+    period: "2016 - 2020",
     logo: "https://images.unsplash.com/photo-1580477371194-4592e4ec5c8e?ixlib=rb-4.0.3",
     achievements: [
-      "Thesis: \"Advanced Intrusion Detection Systems Using Machine Learning\"",
+      // "Thesis: \"Advanced Intrusion Detection Systems Using Machine Learning\"",
+      "Was a Top 20% performer",
+      "Student LeaderShip Member"
+    ]
+  },
+  {
+    institution: "Moringa School",
+    degree: "Certificate ",
+    field: "Software Engineering with FullStack-Developer Focus",
+    period: "2021 - 2022",
+    logo: "https://images.unsplash.com/photo-1580477371194-4592e4ec5c8e?ixlib=rb-4.0.3",
+    achievements: [
+      "Thesis: \"Frontend and Backend Web Development principles\"",
       "GPA: 3.95/4.0",
       "Graduate Student Research Award"
     ]
   },
   {
-    institution: "University of California, Berkeley",
-    degree: "Bachelor of Science",
-    field: "Computer Science",
-    period: "2011 - 2015",
+    institution: "ALx Africa",
+    degree: "Diploma",
+    field: "Software Engineering",
+    period: "2022 - 2023",
     logo: "https://images.unsplash.com/photo-1581362072978-14998d01fdaa?ixlib=rb-4.0.3",
     achievements: [
-      "Dean's List: 8 semesters",
-      "Senior Project: Real-time Collaborative Coding Platform",
-      "CS Undergraduate Teaching Assistant"
+      "Low Level Software Development principles",
+      "Frontend Development Focused"
+      // "Senior Project: Real-time Collaborative Coding Platform",
+      // "CS Undergraduate Teaching Assistant"
+    ]
+  },
+    {
+    institution: "Open University of Kenya (OUK)",
+    degree: "Degree",
+    field: "Cyber-Security Forensics",
+    period: "2024 - 2028",
+    logo: "https://images.unsplash.com/photo-1581362072978-14998d01fdaa?ixlib=rb-4.0.3",
+    achievements: [
+      // "Low Level Software Development principles",
+      "Foundations of Computers",
+      "Computer Theories"
+      // "Senior Project: Real-time Collaborative Coding Platform",
+      // "CS Undergraduate Teaching Assistant"
     ]
   }
 ];
