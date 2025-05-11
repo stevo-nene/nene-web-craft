@@ -13,19 +13,30 @@ import BlogPost from "@/pages/blogs/BlogPost";
 import Contact from "@/pages/contact/Contact";
 import Resume from "@/pages/resume/Resume";
 import NotFound from "@/pages/NotFound";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <Helmet>
-      <title>Steve Nene | Full-Stack Developer</title>
-      <meta name="description" content="Portfolio of Steve Nene, Full-Stack Software Developer & Cybersecurity Enthusiast" />
-    </Helmet>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
+const App = () => {
+  const location = useLocation()
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+  useEffect(() => {
+    scrollToTop
+  }, [location])
+  return (
+
+    // <BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <Helmet>
+        <title>Steve Nene | Full-Stack Developer</title>
+        <meta name="description" content="Portfolio of Steve Nene, Full-Stack Software Developer & Cybersecurity Enthusiast" />
+      </Helmet>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/projects" element={<AllProjects />} />
@@ -36,9 +47,10 @@ const App = () => (
           <Route path="/resume" element={<Resume />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+      </TooltipProvider>
+    </QueryClientProvider>
+    // </BrowserRouter>
+  )
+};
 
 export default App;
