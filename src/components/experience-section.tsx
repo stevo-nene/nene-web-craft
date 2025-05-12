@@ -12,42 +12,55 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
-    role: "Senior Full Stack Developer",
-    company: "TechCorp Solutions",
-    location: "San Francisco, CA",
-    period: "Jan 2022 - Present",
-    description: [
-      "Lead development of a React-based dashboard that increased user engagement by 37%",
-      "Architected and implemented microservices using Node.js and Docker",
-      "Mentored junior developers and conducted code reviews to maintain code quality",
-      "Implemented CI/CD pipeline reducing deployment time by 40%"
-    ]
-  },
-  {
-    role: "Cybersecurity Engineer",
-    company: "SecureNet",
-    location: "Boston, MA",
-    period: "Mar 2019 - Dec 2021",
-    description: [
-      "Conducted security audits and vulnerability assessments for enterprise clients",
-      "Developed automated security testing tools using Python and JavaScript",
-      "Implemented security best practices resulting in 60% reduction in vulnerabilities",
-      "Collaborated with dev teams to integrate security protocols into SDLC"
-    ]
-  },
-  {
     role: "Full Stack Developer",
-    company: "WebStart Inc.",
-    location: "Austin, TX",
-    period: "Jun 2017 - Feb 2019",
+    company: "Tyne Africa IT Consulting",
+    location: "Nairobi, Kenya",
+    period: "Jan 2025 – Present",
     description: [
-      "Developed and maintained multiple client websites using JavaScript, React and Node.js",
-      "Created RESTful APIs and integrated third-party services",
-      "Optimized database queries resulting in 30% improved performance",
-      "Participated in daily standups and sprint planning in an agile team"
+      "Spearheading the development of a React-based internal dashboard, resulting in a 37% increase in user engagement.",
+      "Designed and deployed scalable microservices architecture using Node.js, Express, and Docker.",
+      "Introduced a CI/CD pipeline (GitHub Actions + Docker), cutting deployment time by 40%.",
+      "Provided mentorship to junior developers through code reviews and pair programming."
+    ]
+  },
+  {
+    role: "Retail Systems Assistant",
+    company: "Specific Talent Ltd",
+    location: "Nairobi, Kenya",
+    period: "May 2024 – Oct 2024",
+    description: [
+      "Built a lightweight internal system that allowed users to easily identify discounted products, improving customer satisfaction.",
+      "Supported inventory management processes from product intake to point-of-sale.",
+      "Audited POS systems and ensured accurate product pricing and barcode scanning.",
+      "Collaborated with store staff to ensure seamless operations during peak sales periods."
+    ]
+  },
+  {
+    role: "Head of IT",
+    company: "Mark Dairy Fresh",
+    location: "Kiambu, Kenya",
+    period: "Jun 2023 – Feb 2024",
+    description: [
+      "Led the design and launch of a digital platform to manage milk collection, sales, and distribution.",
+      "Digitized manual record-keeping processes, increasing operational accuracy by 60%.",
+      "Enabled product diversification by integrating supply chain and order tracking systems.",
+      "Provided tech training to staff, ensuring smooth transition to the new digital workflows."
+    ]
+  },
+  {
+    role: "Freelance Developer",
+    company: "Various Clients",
+    location: "Remote",
+    period: "Jan 2022 – Present",
+    description: [
+      "Delivered custom websites and web applications using JavaScript, React, Node.js, and MongoDB.",
+      "Developed RESTful APIs for client platforms and integrated third-party services (e.g., Stripe, Firebase).",
+      "Improved backend performance by optimizing database queries and API endpoints.",
+      "Worked with global clients in agile environments, handling sprint planning and daily standups."
     ]
   }
 ];
+
 
 const ExperienceSection = () => {
   return (

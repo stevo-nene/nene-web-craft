@@ -7,7 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Phone, User, Terminal, Code, Laptop, Send, FileCode } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin,Twitter } from "lucide-react";
 import {
   Form,
   FormControl,
@@ -171,7 +171,7 @@ const ContactSection = () => {
                   </div>
                 </div>
 
-                <div className="space-y-4">
+                {/* <div className="space-y-4">
                   <Card className="overflow-hidden border-primary/10">
                     <div className="flex">
                       <div className="bg-primary/10 p-4 flex items-center justify-center">
@@ -203,7 +203,7 @@ const ContactSection = () => {
                       </CardContent>
                     </div>
                   </Card>
-                </div>
+                </div> */}
 
                 <div className="p-4 bg-secondary/30 rounded-lg border border-primary/10">
                   <h3 className="font-medium mb-2 flex items-center gap-2">
@@ -220,6 +220,56 @@ const ContactSection = () => {
                   </Button>
                 </div>
 
+                <div className="space-y-4 mt-8">
+                  <div className="flex items-center">
+                    <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                      <Mail className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">Email</p>
+                      <a href="mailto:stevekid705@gmail.com" className="hover:text-primary transition-colors">stevekid705@gmail.com</a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center">
+                    <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                      <Phone className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-foreground">Phone</p>
+                      <a href="tel:+254741780970" className="hover:text-primary transition-colors">+254 741 780 970</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex space-x-4 mt-6">
+                  <Button variant="outline" size="icon" className="rounded-full hover:bg-primary/10 hover:text-primary" asChild>
+                    <a href="https://github.com/stephen-nene/" target="_blank" rel="noopener noreferrer">
+                      <Github className="h-5 w-5" />
+                      <span className="sr-only">GitHub</span>
+                    </a>
+                  </Button>
+                  <Button variant="outline" size="icon" className="rounded-full hover:bg-primary/10 hover:text-primary" asChild>
+                    <a href="https://ke.linkedin.com/in/stevenene/" target="_blank" rel="noopener noreferrer">
+                      <Linkedin className="h-5 w-5" />
+                      <span className="sr-only">LinkedIn</span>
+                    </a>
+                  </Button>
+                  <Button variant="outline" size="icon" className="rounded-full hover:bg-primary/10 hover:text-primary" asChild>
+                    <a href="mailto:stevekid705@gmail.com">
+                      <Mail className="h-5 w-5" />
+                      <span className="sr-only">Email</span>
+                    </a>
+                  </Button>
+                   <Button variant="outline" size="icon" className="rounded-full hover:bg-primary/10 hover:text-primary" asChild>
+              <a href="https://x.com/hackerOnBird" target="_blank" rel="noopener noreferrer">
+                <Twitter className="h-5 w-5" />
+                <span className="sr-only">Twitter</span>
+              </a>
+            </Button>
+                </div>
+
+
                 <div className="relative p-6 bg-secondary/30 rounded-lg border border-primary/10">
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary/50 via-secondary to-primary/20"></div>
                   <div className="flex items-center justify-between">
@@ -233,9 +283,11 @@ const ContactSection = () => {
                     </span>
                   </div>
                 </div>
+
               </CardContent>
             </Card>
           </div>
+
           <Card className="card-hover border-border/40">
             <CardContent className="pt-6">
               <Form {...form}>

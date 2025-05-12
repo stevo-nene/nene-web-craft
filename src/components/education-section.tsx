@@ -14,57 +14,55 @@ interface Education {
 
 const educations: Education[] = [
   {
-    institution: "St Joseph\'s HighSchool",
-    degree:"High School Degree",
-       field: "Kenya Certificate Secondary Education",
+    institution: "St. Joseph's High School, Githunguri",
+    degree: "Kenya Certificate of Secondary Education (KCSE)",
+    field: "General Education",
     period: "2016 - 2020",
-    logo: "https://images.unsplash.com/photo-1580477371194-4592e4ec5c8e?ixlib=rb-4.0.3",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2rm2zYIHguwnDgT8_9jNwC6LEgAHo1jbg8g&s",
     achievements: [
-      // "Thesis: \"Advanced Intrusion Detection Systems Using Machine Learning\"",
-      "Was a Top 20% performer",
-      "Student LeaderShip Member"
+      "Consistently ranked in the top 20% of the class",
+      "Active member of the Student Leadership Council",
+      "Participated in inter-school science and technology competitions"
     ]
   },
   {
     institution: "Moringa School",
-    degree: "Certificate ",
-    field: "Software Engineering with FullStack-Developer Focus",
+    degree: "Certificate in Software Engineering",
+    field: "Full-Stack Web Development",
     period: "2021 - 2022",
-    logo: "https://images.unsplash.com/photo-1580477371194-4592e4ec5c8e?ixlib=rb-4.0.3",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5MtRrZ5ntzJhuyc5yg8q707E7AzRDTEgdLQ&s",
     achievements: [
-      "Thesis: \"Frontend and Backend Web Development principles\"",
-      "GPA: 3.95/4.0",
-      "Graduate Student Research Award"
+      "Completed intensive training in both front-end and back-end development",
+      "Developed multiple web applications as part of project-based learning",
+      "Collaborated with peers on capstone projects simulating real-world scenarios"
     ]
   },
   {
-    institution: "ALx Africa",
-    degree: "Diploma",
-    field: "Software Engineering",
+    institution: "ALX Africa",
+    degree: "Diploma in Software Engineering",
+    field: "Software Development",
     period: "2022 - 2023",
-    logo: "https://images.unsplash.com/photo-1581362072978-14998d01fdaa?ixlib=rb-4.0.3",
+    logo: "https://yt3.googleusercontent.com/vc_UlJrsGPt0BLmtIkV1X3e9ZnIK27-2dY9U9Y9uXWw_LSKipULYWrU_nGEEtzUM-KR0DIjoyw=s900-c-k-c0x00ffffff-no-rj",
     achievements: [
-      "Low Level Software Development principles",
-      "Frontend Development Focused"
-      // "Senior Project: Real-time Collaborative Coding Platform",
-      // "CS Undergraduate Teaching Assistant"
+      "Gained proficiency in low-level programming and software development principles",
+      "Focused on front-end development, enhancing user interface design skills",
+      "Engaged in collaborative projects, fostering teamwork and problem-solving abilities"
     ]
   },
-    {
+  {
     institution: "Open University of Kenya (OUK)",
-    degree: "Degree",
-    field: "Cyber-Security Forensics",
-    period: "2024 - 2028",
-    logo: "https://images.unsplash.com/photo-1581362072978-14998d01fdaa?ixlib=rb-4.0.3",
+    degree: "Bachelor of Science in Cyber Security and Digital Forensics",
+    field: "Cyber Security",
+    period: "2024 - Present",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD8LSc4s3fuYMSfNopeKTqE-gtg6hpU_gtcA&s",
     achievements: [
-      // "Low Level Software Development principles",
-      "Foundations of Computers",
-      "Computer Theories"
-      // "Senior Project: Real-time Collaborative Coding Platform",
-      // "CS Undergraduate Teaching Assistant"
+      "Currently enrolled in courses covering computer systems and security fundamentals",
+      "Engaging in studies related to digital forensics and ethical hacking",
+      "Participating in virtual labs and simulations to apply theoretical knowledge"
     ]
   }
 ];
+
 
 const EducationSection = () => {
   return (
