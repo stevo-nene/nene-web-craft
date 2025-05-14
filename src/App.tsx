@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Index from "@/pages/Index";
 import AllProjects from "@/pages/projects/AllProjects";
@@ -14,21 +14,17 @@ import Contact from "@/pages/contact/Contact";
 import Resume from "@/pages/resume/Resume";
 import NotFound from "@/pages/NotFound";
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
 
 const queryClient = new QueryClient();
 
 const App = () => {
-  const location = useLocation()
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const location = useLocation();
+  
   useEffect(() => {
-    scrollToTop
-  }, [location])
-  return (
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [location.pathname]);
 
-    // <BrowserRouter>
+  return (
     <QueryClientProvider client={queryClient}>
       <Helmet>
         <title>Steve Nene | Full-Stack Developer</title>
@@ -49,8 +45,7 @@ const App = () => {
         </Routes>
       </TooltipProvider>
     </QueryClientProvider>
-    // </BrowserRouter>
-  )
+  );
 };
 
 export default App;
