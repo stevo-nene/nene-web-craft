@@ -13,16 +13,29 @@ interface Education {
 }
 
 const educations: Education[] = [
-  {
-    institution: "St. Joseph's High School, Githunguri",
-    degree: "Kenya Certificate of Secondary Education (KCSE)",
-    field: "General Education",
-    period: "2016 - 2020",
-    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2rm2zYIHguwnDgT8_9jNwC6LEgAHo1jbg8g&s",
+
+    {
+    institution: "Open University of Kenya (OUK)",
+    degree: "Bachelor of Science in Cyber Security and Digital Forensics",
+    field: "Cyber Security",
+    period: "2024 - Present",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD8LSc4s3fuYMSfNopeKTqE-gtg6hpU_gtcA&s",
     achievements: [
-      "Consistently ranked in the top 20% of the class",
-      "Active member of the Student Leadership Council",
-      "Participated in inter-school science and technology competitions"
+      "Currently enrolled in courses covering computer systems and security fundamentals",
+      "Engaging in studies related to digital forensics and ethical hacking",
+      "Participating in virtual labs and simulations to apply theoretical knowledge"
+    ]
+  },
+    {
+    institution: "ALX Africa",
+    degree: "Diploma in Software Engineering",
+    field: "Software Development",
+    period: "2022 - 2023",
+    logo: "https://yt3.googleusercontent.com/vc_UlJrsGPt0BLmtIkV1X3e9ZnIK27-2dY9U9Y9uXWw_LSKipULYWrU_nGEEtzUM-KR0DIjoyw=s900-c-k-c0x00ffffff-no-rj",
+    achievements: [
+      "Gained proficiency in low-level programming and software development principles",
+      "Focused on front-end development, enhancing user interface design skills",
+      "Engaged in collaborative projects, fostering teamwork and problem-solving abilities"
     ]
   },
   {
@@ -38,29 +51,20 @@ const educations: Education[] = [
     ]
   },
   {
-    institution: "ALX Africa",
-    degree: "Diploma in Software Engineering",
-    field: "Software Development",
-    period: "2022 - 2023",
-    logo: "https://yt3.googleusercontent.com/vc_UlJrsGPt0BLmtIkV1X3e9ZnIK27-2dY9U9Y9uXWw_LSKipULYWrU_nGEEtzUM-KR0DIjoyw=s900-c-k-c0x00ffffff-no-rj",
+    institution: "St. Joseph's High School, Githunguri",
+    degree: "Kenya Certificate of Secondary Education (KCSE)",
+    field: "General Education",
+    period: "2016 - 2020",
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2rm2zYIHguwnDgT8_9jNwC6LEgAHo1jbg8g&s",
     achievements: [
-      "Gained proficiency in low-level programming and software development principles",
-      "Focused on front-end development, enhancing user interface design skills",
-      "Engaged in collaborative projects, fostering teamwork and problem-solving abilities"
+      "Consistently ranked in the top 20% of the class",
+      "Active member of the Student Leadership Council",
+      "Participated in inter-school science and technology competitions"
     ]
   },
-  {
-    institution: "Open University of Kenya (OUK)",
-    degree: "Bachelor of Science in Cyber Security and Digital Forensics",
-    field: "Cyber Security",
-    period: "2024 - Present",
-    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD8LSc4s3fuYMSfNopeKTqE-gtg6hpU_gtcA&s",
-    achievements: [
-      "Currently enrolled in courses covering computer systems and security fundamentals",
-      "Engaging in studies related to digital forensics and ethical hacking",
-      "Participating in virtual labs and simulations to apply theoretical knowledge"
-    ]
-  }
+
+
+
 ];
 
 
