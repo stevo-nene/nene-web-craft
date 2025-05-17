@@ -45,6 +45,9 @@ const badgeVariants = cva(
           "bg-transparent border-gray-300 text-gray-900 dark:border-gray-600 dark:text-gray-100",
         muted:
           "bg-gray-100 text-gray-800 border-gray-200 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700",
+  
+        lime: "border-lime-500 bg-lime-200 hover:bg-lime-300 dark:border-lime-100 dark:bg-lime-600",
+        glow: "border-primary/30 bg-primary/10 text-primary hover:bg-primary/20 backdrop-blur-sm"
       },
       size: {
         sm: "px-2 py-0.5 text-xs",

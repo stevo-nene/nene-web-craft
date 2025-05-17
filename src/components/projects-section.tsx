@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -9,6 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Badge } from "@/components/ui/badge";
 
 interface Project {
   id: string;
@@ -18,87 +18,129 @@ interface Project {
   images: string[];
   github?: string;
   demo?: string;
+  timeline: string;
 }
 
-const projects: Project[] = [
+const featuredProjects: Project[] = [
   {
-    id: "project-1",
-    title: "E-Learning Platform",
-    description: "A comprehensive online learning platform with course management, user authentication, and video streaming",
-    tags: ["React", "Node.js", "MongoDB", "Express", "AWS"],
-    images: ["https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3"],
-    github: "https://github.com",
-    demo: "https://demo.com"
+    id: "playstation-booking",
+    title: "PlayStation Booking Platform",
+    description: "Full-featured booking system for PlayStation gaming sessions with real-time scheduling, payment integration, and admin dashboard.",
+    tags: ["React", "TypeScript", "Redux", "Tailwind"],
+    images: [
+      "https://images.unsplash.com/photo-1607853202273-797f1c22a38e?ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?ixlib=rb-4.0.3"
+    ],
+    github: "https://github.com/stephen-nene",
+    demo: "https://ps-booking.vercel.app/",
+    timeline: "Mar 2023 - Jun 2023"
   },
   {
-    id: "project-2",
-    title: "Cybersecurity Dashboard",
-    description: "Real-time monitoring dashboard for network security with threat visualization and analytics",
-    tags: ["React", "D3.js", "Python", "Flask", "WebSockets"],
-    images: ["https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3"],
-    github: "https://github.com",
-    demo: "https://demo.com"
+    id: "milk-management-1",
+    title: "Milk Management System",
+    description: "Comprehensive dairy management platform handling customer relations, sales tracking, and employee management for milk brokers.",
+    tags: ["Angular", "Java", "Spring Boot", "PostgreSQL"],
+    images: [
+
+      "https://images.unsplash.com/photo-1517448931760-9bf4414148c5",
+      "https://images.unsplash.com/photo-1579621970588-a35d0e7ab9b6?ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3"
+    ],
+    github: "https://github.com/stephen-nene",
+    demo: "https://milky-way-logistics.vercel.app",
+    timeline: "Sep 2020 - Jan 2021"
   },
   {
-    id: "project-3",
-    title: "Smart Home App",
-    description: "IoT control system for home devices with automation schedules and energy monitoring",
-    tags: ["React Native", "Node.js", "MQTT", "Firebase"],
-    images: ["https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-4.0.3"],
-    github: "https://github.com",
+    id: "alcohol-ecommerce",
+    title: "Alcohol Ecommerce Platform",
+    description: "Role-based ecommerce solution with distinct dashboards for customers, admins, and distributors, featuring inventory management.",
+    tags: ["React", "Node.js", "MongoDB", "AWS"],
+    images: [
+      "https://images.unsplash.com/photo-1733709425481-bbdad7762321",
+      "https://images.unsplash.com/photo-1516594915697-87eb3b1c14ea"
+    ],
+    github: "https://github.com/stephen-nene",
+    demo: "https://dripcode.vercel.app/",
+    timeline: "Jan 2023 - Apr 2023"
   },
   {
-    id: "project-4",
-    title: "Blockchain Trading Platform",
-    description: "Secure cryptocurrency exchange platform with real-time market data and wallet integration",
-    tags: ["React", "Solidity", "Web3.js", "Node.js", "PostgreSQL"],
-    images: ["https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3"],
-    github: "https://github.com",
-    demo: "https://demo.com"
+    id: "events-kenya-1",
+    title: "Kenyan Events Platform",
+    description: "Event discovery and management system for Kenyan market, supporting ticket sales and venue bookings with real-time updates.",
+    tags: ["React", "D3.js", "Python", "WebSockets"],
+    images: [
+      "https://images.unsplash.com/photo-1549451371-64aa98a6f660",
+      "https://images.unsplash.com/photo-1527529482837-4698179dc6ce",
+      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3",
+    ],
+    github: "https://github.com/stephen-nene",
+    demo: "https://sherehe-ke.vercel.app",
+    timeline: "May 2022 - Nov 2022"
   },
   {
-    id: "project-5",
-    title: "AI Content Generator",
-    description: "Machine learning powered tool that creates custom marketing content based on user prompts",
-    tags: ["Python", "TensorFlow", "Flask", "React", "MongoDB"],
-    images: ["https://images.unsplash.com/photo-1677442135136-760c813a02e8?ixlib=rb-4.0.3"],
-    github: "https://github.com",
-    demo: "https://demo.com"
+    id: "truck-route",
+    title: "Truck Route Management",
+    description: "FMCSA-compliant logistics solution for route optimization, hours tracking, and regulatory compliance for truck drivers.",
+    tags: ["React", "Mapbox", "Node.js", "PostgreSQL"],
+    images: [
+      "https://images.unsplash.com/photo-1590504805643-bb1f94cde7fd",
+      'https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-4.0.3',
+      "https://images.unsplash.com/photo-1535395154152-d0f9c0755c3e?ixlib=rb-4.0.3",
+    ],
+    github: "https://github.com/stephen-nene",
+    demo: "https://spotter-swart.vercel.app/",
+    timeline: "Sep 2022 - Nov 2022"
   },
   {
-    id: "project-6",
-    title: "Virtual Reality Training",
-    description: "Immersive VR training modules for industrial safety procedures and equipment operation",
-    tags: ["Unity3D", "C#", "WebXR", "Firebase", "Three.js"],
-    images: ["https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?ixlib=rb-4.0.3"],
-    github: "https://github.com",
+    id: "greensert-ai-1",
+    title: "GreensertAI",
+    description: "AI-powered environmental platform analyzing satellite data to identify desert regions for potential reforestation projects.",
+    tags: ["Python", "TensorFlow", "GeoDjango", "PostGIS"],
+    images: [
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3",
+      "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?ixlib=rb-4.0.3"
+    ],
+    github: "https://github.com/stephen-nene",
+    demo: "https://greensert.vercel.app/",
+    timeline: "Oct 2021 - Dec 2021"
   }
 ];
 
 const ProjectCard = ({ project }: { project: Project }) => {
   return (
-    <div className="card-project card-hover h-full">
-      <div className="relative overflow-hidden">
+    <div className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
+      <div className="aspect-video overflow-hidden bg-muted relative">
         <img
           src={project.images[0]}
           alt={project.title}
-          className="w-full h-56 object-cover"
+          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+          loading="lazy"
         />
       </div>
       
-      <div className="p-5 flex flex-col h-[calc(100%-14rem)]">
-        <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-        <p className="text-muted-foreground mb-4 flex-grow">{project.description}</p>
+      <div className="p-6 flex flex-col flex-grow">
+        <div className="flex justify-between items-start mb-2">
+          <h3 className="text-xl font-semibold">{project.title}</h3>
+          <span className="text-sm text-muted-foreground">{project.timeline}</span>
+        </div>
         
-        <div className="flex flex-wrap mb-4">
-          {project.tags.map(tag => (
-            <span key={tag} className="tech-tag">{tag}</span>
+        <p className="text-muted-foreground mb-4 line-clamp-3">{project.description}</p>
+        
+        <div className="flex flex-wrap gap-2 mb-4">
+          {project.tags.slice(0, 4).map(tag => (
+            <Badge key={tag} variant="outline" className="text-xs">
+              {tag}
+            </Badge>
           ))}
         </div>
         
-        <div className="flex justify-between items-center mt-auto">
-          <Link to={`/projects/${project.id}`} className="text-primary font-medium hover:underline">
+        <div className="flex justify-between items-center mt-auto pt-2">
+          <Link 
+            to={`/projects/${project.id}`} 
+            className="text-primary font-medium hover:underline flex items-center"
+          >
             View Details
+            <ExternalLink className="ml-1 h-4 w-4" />
           </Link>
           
           <div className="flex space-x-2">
@@ -107,7 +149,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
                 href={project.github} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-foreground/70 hover:text-foreground"
+                className="text-foreground/70 hover:text-foreground transition-colors"
                 aria-label="GitHub Repository"
               >
                 <Github size={20} />
@@ -119,7 +161,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
                 href={project.demo} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-foreground/70 hover:text-foreground"
+                className="text-foreground/70 hover:text-foreground transition-colors"
                 aria-label="Live Demo"
               >
                 <ExternalLink size={20} />
@@ -134,32 +176,37 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="section bg-secondary/30">
+    <section id="projects" className="py-16 bg-secondary/10">
       <div className="container-custom">
-        <h2 className="section-heading">Featured Projects</h2>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold mb-2">Featured Projects</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            A selection of my most impactful and technically challenging projects
+          </p>
+        </div>
         
         <Carousel
-          className="w-full max-w-screen-xl mx-auto"
+          className="w-full"
           opts={{
             align: "start",
             loop: true,
           }}
         >
           <CarouselContent className="-ml-2 md:-ml-4">
-            {projects.map(project => (
+            {featuredProjects.map(project => (
               <CarouselItem key={project.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                 <ProjectCard project={project} />
               </CarouselItem>
             ))}
           </CarouselContent>
-          <div className="flex justify-end gap-2 mt-4">
+          <div className="flex justify-center gap-4 mt-8">
             <CarouselPrevious className="relative static left-auto right-auto translate-y-0" />
             <CarouselNext className="relative static left-auto right-auto translate-y-0" />
           </div>
         </Carousel>
         
         <div className="mt-12 text-center">
-          <Button asChild>
+          <Button asChild variant="outline" className="px-8">
             <Link to="/projects">View All Projects</Link>
           </Button>
         </div>
