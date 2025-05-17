@@ -23,25 +23,47 @@ export default function Footer() {
         <div className="flex justify-center mb-6">
           <div className="flex space-x-4">
             <Button variant="outline" size="icon" className="rounded-full hover:bg-primary/10 hover:text-primary" asChild>
-              <a href="https://github.com/stephen-nene/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://github.com/stephen-nene/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub profile of Steve Nene"
+              >
                 <Github className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>
               </a>
+
             </Button>
+
             <Button variant="outline" size="icon" className="rounded-full hover:bg-primary/10 hover:text-primary" asChild>
-              <a href="https://ke.linkedin.com/in/stevenene/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://ke.linkedin.com/in/stevenene/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn profile of Steve Nene"
+              >
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
               </a>
             </Button>
+
             <Button variant="outline" size="icon" className="rounded-full hover:bg-primary/10 hover:text-primary" asChild>
-              <a href="mailto:stevekid705@gmail.com">
+              <a
+                href="mailto:stevekid705@gmail.com"
+                aria-label="Send email to Steve Nene"
+              >
                 <Mail className="h-5 w-5" />
                 <span className="sr-only">Email</span>
               </a>
             </Button>
+
             <Button variant="outline" size="icon" className="rounded-full hover:bg-primary/10 hover:text-primary" asChild>
-              <a href="https://x.com/hackerOnBird" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://x.com/hackerOnBird"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Twitter profile of Steve Nene"
+              >
                 <Twitter className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
               </a>
@@ -58,7 +80,7 @@ export default function Footer() {
             </Button>
             {/* <Button variant="outline" size="icon" className="rounded-full hover:bg-primary/10 hover:text-primary"> */}
 
-              <ThemeToggle />
+            <ThemeToggle />
             {/* </Button> */}
           </div>
         </div>
