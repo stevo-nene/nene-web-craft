@@ -1,0 +1,138 @@
+Perfect — Vite + React + MDX is actually simpler than Next.js because Vite supports **dynamic imports and ESM natively**. Here’s how you can set it up cleanly for your use case.
+
+---
+
+## 1. Prerequisites
+
+Install MDX support for Vite:
+
+```bash
+npm install @mdx-js/react vite-plugin-mdx
+```
+
+Then in `vite.config.js`:
+
+```js
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import mdx from 'vite-plugin-mdx';
+
+export default defineConfig({
+  plugins: [react(), mdx()]
+});
+```
+
+---
+
+## 2. File Structure
+
+```
+/src
+  /projects
+    ps-booking.mdx
+    tenderhub.mdx
+    niloyd.mdx
+  /components
+    Projects.jsx
+```
+
+Each `.mdx` can be full Markdown with React components inside.
+
+---
+
+## 3. Dynamic Import in Vite
+
+Vite supports **`import.meta.glob`**, which is perfect for dynamically loading files.
+
+```jsx
+import React, { Suspense } from "react";
+import { MDXProvider } from "@mdx-js/react";
+
+const Projects = () => {
+  // Glob all MDX files in /projects
+  const modules = import.meta.glob("../projects/*.mdx");
+
+  // Load all modules dynamically
+  const [projectComponents, setProjectComponents] = React.useState([]);
+
+  React.useEffect(() => {
+    const loadProjects = async () => {
+      const loaded = await Promise.all(
+        Object.values(modules).map(async (mod) => {
+          const module = await mod();
+          return module.default; // MDX component
+        })
+      );
+      setProjectComponents(loaded);
+    };
+
+    loadProjects();
+  }, []);
+
+  return (
+    <MDXProvider>
+      <div className="projects-container">
+        {projectComponents.map((Project, i) => (
+          <Suspense fallback={<div>Loading project...</div>} key={i}>
+            <Project />
+          </Suspense>
+        ))}
+      </div>
+    </MDXProvider>
+  );
+};
+
+export default Projects;
+```
+
+---
+
+### ✅ How This Works
+
+1. `import.meta.glob("../projects/*.mdx")` gives you an object mapping file paths → import functions.
+2. We dynamically `await mod()` for each file and grab `module.default`, which is the MDX as a React component.
+3. Each MDX file renders like a normal React component.
+4. `Suspense` provides a fallback while loading — optional but good UX.
+
+---
+
+### 4. Optional: Add Props to MDX
+
+If your MDX files export frontmatter, e.g.,
+
+```mdx
+---
+title: "PlayStation Booking"
+date: "2026-01-20"
+---
+
+# Project Overview
+...
+```
+
+You can access it via:
+
+```js
+const module = await mod();
+console.log(module.frontmatter.title);
+```
+
+Then you could render a **list dynamically with metadata**.
+
+---
+
+### 5. Styling
+
+* Wrap your MDX content in a container with Tailwind or CSS:
+
+```jsx
+<div className="prose max-w-3xl mx-auto">{/* MDX content */}</div>
+```
+
+* Tailwind works nicely with MDX for consistent typography.
+
+---
+
+If you want, I can **rewrite your PlayStation MDX as a fully dynamic JSX-ready MDX**, so you can drop it into this system and it works immediately with Vite + React.
+
+Do you want me to do that next?

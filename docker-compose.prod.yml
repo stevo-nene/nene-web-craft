@@ -6,3 +6,8 @@ services:
     ports:
       - "8080:80"
     restart: unless-stopped
+
+
+# docker-compose -f docker-compose.dev.yml up
+# docker-compose -f docker-compose.prod.yml up -d
+

@@ -1,5 +1,8 @@
 import PlayStation from '@/data/mdx/PlayStation.md?raw'
-// import Img from "@/data/images/trucker.jpg"
+import AlcoholEcommerce from '@/data/mdx/AlcoholEcommerce.md?raw'
+import Timebox from '@/data/mdx/Timebox.md?raw'
+import ShoppingList from '@/data/mdx/ShoppingList.md?raw'
+import DefaultMd from '@/data/mdx/Default.md?raw'
 
 const randomId = () => Math.random().toString(36).substr(2, 9);
 function generateProjectId(title: string) {
@@ -49,7 +52,7 @@ export const projects: Project[] = [
     id: "alcohol-ecommerce",
     title: "Alcohol Ecommerce Website",
     shortDescription: "Frontend with role-based dashboards for customers, admins, and distributors",
-    fullDescription: PlayStation,
+    fullDescription: AlcoholEcommerce,
     tags: ["React", "Node.js", "MongoDB", "Express", "AWS"],
     images: [
       'https://images.unsplash.com/photo-1733709425481-bbdad7762321',
@@ -65,7 +68,7 @@ export const projects: Project[] = [
     id: "events-kenya-1",
     title: "Events Listing Platform (Kenya)",
     shortDescription: "Comprehensive event management for parties, hackathons with ticket purchasing",
-    fullDescription: PlayStation,
+    fullDescription: DefaultMd,
     tags: ["React", "D3.js", "Python", "Flask"],
     images: [
 
@@ -83,7 +86,7 @@ export const projects: Project[] = [
     id: "events-kenya-2",
     title: "Advanced Events Platform",
     shortDescription: "Second generation events platform with additional tech integrations and analytics",
-    fullDescription: PlayStation,
+    fullDescription: DefaultMd,
     tags: ["React Native", "Node.js", "MQTT", "Firebase"],
     images: [
 
@@ -101,7 +104,7 @@ export const projects: Project[] = [
     id: "milk-management-1",
     title: "Milk Management System",
     shortDescription: "UI for milk brokers to manage customers, sales, and employees",
-    fullDescription: PlayStation,
+    fullDescription: DefaultMd,
     tags: ["Angular", "Java", "Spring Boot"],
     images: [
       "https://images.unsplash.com/photo-1576186726188-c9d70843790f",
@@ -116,7 +119,7 @@ export const projects: Project[] = [
     id: "green-grocery",
     title: "Green Grocery Ecommerce",
     shortDescription: "UI-focused ecommerce platform for organic and locally-sourced groceries",
-    fullDescription: PlayStation,
+    fullDescription: DefaultMd,
     tags: ["Angular", "TypeScript", "SCSS"],
     images: [
       "https://images.unsplash.com/photo-1589927986089-35812388d1f4?ixlib=rb-4.0.3"
@@ -130,7 +133,7 @@ export const projects: Project[] = [
     id: "milk-management-2",
     title: "Milk Management System v2",
     shortDescription: "Enhanced version with additional reporting and analytics features",
-    fullDescription: PlayStation,
+    fullDescription: DefaultMd,
     tags: ["Angular", "Java", "Spring Boot"],
     images: [
       "https://images.unsplash.com/photo-1436076863939-06870fe779c2?ixlib=rb-4.0.3"
@@ -144,7 +147,7 @@ export const projects: Project[] = [
     id: "job-seeker",
     title: "Job Seeker Platform",
     shortDescription: "Kenyan-focused job board connecting employers with local talent",
-    fullDescription: PlayStation,
+    fullDescription: DefaultMd,
     tags: ["React", "Node.js", "MongoDB"],
     images: [
       "https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3"
@@ -158,7 +161,7 @@ export const projects: Project[] = [
     id: "greensert-ai-1",
     title: "GreensertAI",
     shortDescription: "AI analyzing desert regions for potential reforestation opportunities",
-    fullDescription: PlayStation,
+    fullDescription: DefaultMd,
     tags: ["Python", "TensorFlow", "GeoDjango"],
     images: [
       "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3"
@@ -172,7 +175,7 @@ export const projects: Project[] = [
   //   id: "greensert-ai-2",
   //   title: "GreensertAI Mobile",
   //   shortDescription: "Mobile version with offline capabilities for field researchers",
-  //   fullDescription: PlayStation,
+  //   fullDescription: DefaultMd,
   //   tags: ["React Native", "Python"],
   //   images: [
   //     "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?ixlib=rb-4.0.3"
@@ -186,7 +189,7 @@ export const projects: Project[] = [
     id: "trading-journal",
     title: "Trading Journal",
     shortDescription: "Platform for traders to record and analyze their trades",
-    fullDescription: PlayStation,
+    fullDescription: DefaultMd,
     tags: ["React", "Firebase", "Chart.js"],
     images: [
       "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3"
@@ -200,7 +203,7 @@ export const projects: Project[] = [
     id: "hospital-management",
     title: "Hospital Management System",
     shortDescription: "Solution for patient records, appointments, and administration",
-    fullDescription: PlayStation,
+    fullDescription: DefaultMd,
     tags: ["Angular", "Java", "Spring Boot"],
     images: [
       "https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3"
@@ -214,7 +217,7 @@ export const projects: Project[] = [
     id: "tech-lovers",
     title: "Tech Lovers Community",
     shortDescription: "Website for tech enthusiasts to share projects and ideas",
-    fullDescription: PlayStation,
+    fullDescription: DefaultMd,
     tags: ["React", "Node.js", "MongoDB"],
     images: [
       "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3"
@@ -228,7 +231,7 @@ export const projects: Project[] = [
     id: "truck-route",
     title: "Truck Route Management",
     shortDescription: "FMCSA-compliant solution for route planning and compliance",
-    fullDescription: PlayStation,
+    fullDescription: DefaultMd,
     tags: ["React", "Mapbox", "Node.js"],
     images: [
       "https://images.unsplash.com/photo-1590504805643-bb1f94cde7fd",
@@ -243,13 +246,13 @@ export const projects: Project[] = [
     id: "timebox-tool",
     title: "Timebox Management Tool",
     shortDescription: "Productivity app to organize your day into focused time blocks",
-    fullDescription: PlayStation,
+    fullDescription: Timebox,
     tags: ["React", "Firebase"],
     images: [
       "https://images.unsplash.com/photo-1501139083538-0139583c060f?ixlib=rb-4.0.3"
     ],
     github: 'https://github.com/stephen-nene',
-    demo: "https://timebox-nene.vercel.app/",
+    demo: "https://timebox.stevenene.top/",
     timeline: "Dec 2022 - Feb 2023",
     techStack: ["React", "Firebase"]
   },
@@ -257,7 +260,7 @@ export const projects: Project[] = [
     id: "spending-tracker",
     title: "Spending Tracker",
     shortDescription: "Application to track and analyze personal spending habits",
-    fullDescription: PlayStation,
+    fullDescription: DefaultMd,
     tags: ["React", "Chart.js"],
     images: [
       "https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3"
@@ -271,7 +274,7 @@ export const projects: Project[] = [
     id: "ai-tourguide",
     title: "Local AI Tour Guide",
     shortDescription: "AI-powered tour guide for local attractions and historical sites",
-    fullDescription: PlayStation,
+    fullDescription: DefaultMd,
     tags: ["Python", "Flask"],
     images: [
       "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-4.0.3"
@@ -285,7 +288,7 @@ export const projects: Project[] = [
     id: "community-platform",
     title: "Community Contribution Platform",
     shortDescription: "Platform for users to contribute to local community projects",
-    fullDescription: PlayStation,
+    fullDescription: DefaultMd,
     tags: ["React", "Node.js"],
     images: [
       "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3"
@@ -299,13 +302,13 @@ export const projects: Project[] = [
     id: "shopping-list",
     title: "Digital Shopping List",
     shortDescription: "Paperless shopping list with sharing capabilities",
-    fullDescription: PlayStation,
+    fullDescription: ShoppingList,
     tags: ["React", "Firebase"],
     images: [
       "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3"
     ],
     github: 'https://github.com/stephen-nene',
-    demo: "https://shpnlst.vercel.app/",
+    demo: "https://shpnlst.stevenene.top/",
     timeline: "Oct 2023 - Dec 2023",
     techStack: ["React", "Firebase"]
   },
@@ -313,7 +316,7 @@ export const projects: Project[] = [
     id: "youtube-downloader",
     title: "YouTube Video Downloader",
     shortDescription: "Desktop application to download YouTube videos (native only)",
-    fullDescription: PlayStation,
+    fullDescription: DefaultMd,
     tags: ["Rust", "Vite"],
     images: [
       "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3"
@@ -327,21 +330,21 @@ export const projects: Project[] = [
     id: "dairy-system",
     title: "Digital Dairy System",
     shortDescription: "Modernized version of traditional dairy management methods",
-    fullDescription: PlayStation,
+    fullDescription: DefaultMd,
     tags: ["Angular", "Node.js"],
     images: [
       "https://images.unsplash.com/photo-1550583724-b2692b85b150?ixlib=rb-4.0.3"
     ],
     github: 'https://github.com/stephen-nene',
-    demo: "https://markdairy.vercel.app/",
+    demo: "https://markfreshdairy.com/",
     timeline: "Apr 2024 - Jun 2024",
-    techStack: ["Angular", "Node.js"]
+    techStack: ["React", "Django"]
   },
   {
     id: "frontend-template",
     title: "Frontend Auto Template",
     shortDescription: "Starter template for rapid frontend development",
-    fullDescription: PlayStation,
+    fullDescription: DefaultMd,
     tags: ["React", "Tailwind"],
     images: [
       "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3"
@@ -355,7 +358,7 @@ export const projects: Project[] = [
     id: "therapy-website",
     title: "Fountain of Hope Therapy",
     shortDescription: "Website for therapy practice with appointment booking",
-    fullDescription: PlayStation,
+    fullDescription: DefaultMd,
     tags: ["React", "RubyOnRails", 'Therapy'],
     images: [
       "https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3"
@@ -369,7 +372,7 @@ export const projects: Project[] = [
     id: "network-initiated-push",
     title: "Mpesa Network Initiated Push",
     shortDescription: "Money payment system using the mobile money system",
-    fullDescription: PlayStation,
+    fullDescription: DefaultMd,
     tags: ["Node.js", "WebSockets"],
     images: [
       "https://images.unsplash.com/photo-1614332287897-cdc485fa562d?ixlib=rb-4.0.3"
@@ -383,7 +386,7 @@ export const projects: Project[] = [
     id: "bank-demo",
     title: "Dummy Bank Demo",
     shortDescription: "Interactive demo of online banking features",
-    fullDescription: PlayStation,
+    fullDescription: DefaultMd,
     tags: ["React", "Firebase"],
     images: [
       "https://images.unsplash.com/photo-1601597111158-2fceff292cdc?ixlib=rb-4.0.3"
@@ -397,7 +400,7 @@ export const projects: Project[] = [
     id: "social-auth",
     title: "Social Auth Demo",
     shortDescription: "Demonstration of various social authentication methods",
-    fullDescription: PlayStation,
+    fullDescription: DefaultMd,
     tags: ["Next.js", "Auth0"],
     images: [
       "https://images.unsplash.com/photo-1551269901-5c5e14c25df7?ixlib=rb-4.0.3"
@@ -411,7 +414,7 @@ export const projects: Project[] = [
     id: "debt-management",
     title: "Debt Management System",
     shortDescription: "Tool for tracking and managing personal or business debts",
-    fullDescription: PlayStation,
+    fullDescription: DefaultMd,
     tags: ["React", "Node.js"],
     images: [
       "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3"

@@ -7,6 +7,7 @@ import { ExternalLink, Github } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
+import SEO from "@/components/SEO";
 
 const AllProjects = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -28,6 +29,12 @@ const AllProjects = () => {
 
   return (
     <Layout title="Projects | Steve Nene" description="Browse my latest software development and cybersecurity projects">
+      <SEO
+        title="Projects | Steve Nene"
+        description="Browse through my portfolio of software development projects including React, Node.js, Python, and full-stack applications."
+        keywords="projects, portfolio, React projects, Node.js, Python, web development, software projects"
+        url="https://stevenene.top/projects"
+      />
       <section className="pt-24 pb-16">
         <div className="container-custom">
           <div className="mb-12">

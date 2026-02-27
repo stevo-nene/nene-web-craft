@@ -1,4 +1,3 @@
-
 import { useParams, Link } from "react-router-dom";
 import { useState } from "react";
 import Layout from "@/components/layout";
@@ -8,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Card, CardContent } from "@/components/ui/card";
-
+import SEO from "@/components/SEO";
 import Markdown from 'react-markdown'
 
 const ProjectDetail = () => {
@@ -52,6 +51,13 @@ const ProjectDetail = () => {
       title={`${project.title} | Steve Nene`}
       description={project.shortDescription}
     >
+      <SEO
+        title={`${project.title} | Steve Nene`}
+        description={project.shortDescription}
+        keywords={`${project.tags.join(', ')}, Steve Nene, portfolio project`}
+        url={`https://stevenene.top/projects/${project.id}`}
+        type="article"
+      />
       <section className="pt-24 pb-16">
         <div className="container-custom">
           <div className="mb-6">
@@ -146,23 +152,9 @@ const ProjectDetail = () => {
                   </div>
                 )}
               </div>
-              <div className="f">
-
-                <div className="prose dark:prose-invert max-w-none">
-                  <h2 className="text-2xl font-semibold mb-4">Project Overview</h2>
-                  {/* {project.fullDescription && project.fullDescription.split('\n').map((paragraph, index) => (
-                    paragraph.trim() ? <p key={index}>{paragraph}</p> : null
-                  ))} */}
-                  <Markdown>{project.fullDescription}</Markdown>
-                {project.fullDescription && (
-                  <>
-                  {/* <project.fullDescription /> */}
-                  </>
-                  )}
-
-                </div>
-              </div>
-              <div className="prose dark:prose-invert max-w-none">
+              <div className="prose prose-slate dark:prose-invert max-w-none prose-headings:font-semibold prose-h2:text-2xl prose-h2:mt-8 prose-h2:mb-4 prose-p:text-base prose-p:leading-7 prose-strong:text-foreground prose-strong:font-semibold prose-ul:my-4 prose-li:my-2">
+                <h2 className="text-2xl font-semibold mb-4">Project Overview</h2>
+                <Markdown>{project.fullDescription}</Markdown>
               </div>
             </div>
 
